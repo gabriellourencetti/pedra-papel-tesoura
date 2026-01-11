@@ -1,7 +1,7 @@
 //Objetivo: Criar um progama simples de pedra, papel e tesoura,
 //para jogar contra o computador.
 
-const {read} = require('fs')
+// const {read} = require('fs')
 
 function usuario(escolhaUsuario) {
     const opcoes = ['pedra', 'papel', 'tesoura'];
@@ -24,26 +24,30 @@ function computador() {
         return 'tesoura'
     }
 }
-
 function comparar(usuario, computador){
     if (usuario === computador) {
         console.log('Empate na tela! Ambos escolheram a mesma opção.');
+        return 'Empate';
     } else if (usuario === 'pedra' && computador === 'tesoura') {
         console.log('Jogador ganhou');
+        return 'Jogador';
     } else if (usuario === 'tesoura' && computador === 'papel') {
         console.log('Jogador wins #ez');
+        return 'Jogador';
     } else if (usuario === 'papel' && computador === 'pedra') {
         console.log('Jogador ganhou');
+        return 'Jogador';
     } else {
         console.log('Máquina wins');
+        return 'Máquina';
     }
 }
 
 
-
 function jogar(){
-    const opcaoUser = promp('Escolha pedra, papel ou tesoura');
+    const opcaoUser = prompt('Escolha pedra, papel ou tesoura');
     const opcaoCpu = computador();
-    comparar(opcaoUser, opcaoCpu);
+    const resultado = comparar(opcaoUser, opcaoCpu);
+    // console.log('Resultado final:', resultado)
 }
  

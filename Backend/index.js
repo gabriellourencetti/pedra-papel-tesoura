@@ -23,11 +23,15 @@ function computador() {
 }
 
 function comparar(usuario, computador){
-    if(usuario === computador){
-        console.log('Empate na tela! Ambos escolheram a mesma opção.')
-    }
-
-    if(usuario = 'pedra' && computador = 'tesoura'){
-        console.log('Jogador ganhou')
+    if (usuario === computador) {
+        console.log('Empate na tela! Ambos escolheram a mesma opção.');
+    } else if (usuario === 'pedra' && computador === 'tesoura') {
+        console.log('Jogador ganhou');
+    } else if (usuario === 'tesoura' && computador === 'papel') {
+        console.log('Jogador wins #ez');
+    } else if (usuario === 'papel' && computador === 'pedra') {
+        console.log('Jogador ganhou');
+    } else {
+        console.log('Máquina wins');
     }
 }

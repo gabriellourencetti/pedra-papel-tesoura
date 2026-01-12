@@ -31,9 +31,6 @@
                         <p class="textinho"><span><strong>Configurações</strong></span></p>
                     </button>
 
-                    <button class="btn-painel" onclick="navegarPara('painel-creditos')">
-                        <p class="textinho"><span><strong>Créditos</strong></span></p>
-                    </button>
                 </div>
             </div>
 
@@ -85,30 +82,24 @@
 
             <!-- Painel Configurações -->
             <div class="painel hidden-right" id="painel-config">
+                <div class="opcoes">
+                 <header class="titulo" style="margin-top: 0;">
+                    <h1 style="margin-top: 0; font-size: 48px; text-align: left;"> Configurações</h1>
+                </header>
+                <button class="btn-painel" onclick="navegarPara('#')">
+                        <p class="textinho"><span><strong>Modo escuro</strong></span></p>
+                    </button>
+                <button class="btn-painel" onclick="navegarPara('#')">
+                        <p class="textinho"><span><strong>Sons</strong></span></p>
+                    </button>
                 <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
                     <span><strong>Voltar</strong></span>
                 </button>
-                <header class="titulo">
-                    <h1 style="margin-top: 0; font-size: 42px;">Configurações</h1>
-                </header>
-                <div class="opcoes">
-                    <h3 style="color: var(--text-light); text-align: center;">Em breve...</h3>
                 </div>
+                
             </div>
 
-            <!-- Painel Créditos -->
-            <div class="painel hidden-right" id="painel-creditos">
-                <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
-                    <span><strong>Voltar</strong></span>
-                </button>
-                <header class="titulo">
-                    <h1 style="margin-top: 0; font-size: 42px;">Créditos</h1>
-                </header>
-                <div class="opcoes">
-                    <h3 style="color: var(--text-light); text-align: center;">Desenvolvido por: <br>Gabriel Lourencetti Souza</h3>
-                    <p style="color: var(--text-light); text-align: center;">Versão 0.11</p>
-                </div>
-            </div>
+            
         </section>
     </main>
 

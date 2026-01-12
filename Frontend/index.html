@@ -16,7 +16,7 @@
             <!-- Painel Menu Principal -->
             <div class="painel active" id="painel-menu">
                 <div class="d-flex" style="margin-bottom: 0;">
-                    <h6 class="versao">Versão: 0.15</h6>
+                    <h6 class="versao">Versão: 0.16</h6>
                 </div>
                 <header class="titulo" style="margin-top: 0;">
                     <h1 style="margin-top: 0; font-size: 48px;">Pedra, papel e tesoura!</h1>
@@ -58,28 +58,31 @@
                 <header class="titulo">
                     <h1 style="margin-top: 0; font-size: 42px;">Escolha sua jogada!</h1>
                 </header>
-                <div class="opcoes">
-                    <div class="game-options">
-                        <div>
-                            <button class="choice-btn" onclick="jogar('pedra')">🪨</button>
-                            <div class="choice-label text-center">Pedra</div>
-                        </div>
-                        <div>
-                            <button class="choice-btn" onclick="jogar('papel')">📄</button>
-                            <div class="choice-label text-center">Papel</div>
-                        </div>
-                        <div>
-                            <button class="choice-btn" onclick="jogar('tesoura')">✂️</button>
-                            <div class="choice-label text-center">Tesoura</div>
+                <div id="resultado"
+                    style="margin-top: 30px; text-align: center; color: var(--text-light); font-size: 20px;">Quem será que vai ganhar?</div>
+                
+                    <div id="placar"
+                    style="margin-top: 20px; text-align: center; color: var(--accent-alert); font-size: 18px;">
+                    Você: 0 | Computador: 0
+                </div>
+                <div class="separador">
+                    <div class="opcoes">
+                        <div class="game-options">
+                            <div>
+                                <button class="choice-btn" onclick="jogar('pedra')">🪨</button>
+                                <div class="choice-label text-center">Pedra</div>
+                            </div>
+                            <div>
+                                <button class="choice-btn" onclick="jogar('papel')">📄</button>
+                                <div class="choice-label text-center">Papel</div>
+                            </div>
+                            <div>
+                                <button class="choice-btn" onclick="jogar('tesoura')">✂️</button>
+                                <div class="choice-label text-center">Tesoura</div>
+                            </div>
                         </div>
                     </div>
 
-                    <div id="resultado"
-                        style="margin-top: 30px; text-align: center; color: var(--text-light); font-size: 20px;"></div>
-                    <div id="placar"
-                        style="margin-top: 20px; text-align: center; color: var(--accent-alert); font-size: 18px;">
-                        Você: 0 | Computador: 0
-                    </div>
                 </div>
             </div>
 
@@ -90,7 +93,7 @@
                         <h1 style="margin-top: 0; font-size: 48px; text-align: left;"> Configurações</h1>
                     </header>
 
-                   
+
                     <button class="btn-painel">
                         <p class="textinho" style="width: 50%;"><span><strong>Modo escuro</strong></span></p>
                         <div style="width: 50%; display: flex; justify-content: right;">

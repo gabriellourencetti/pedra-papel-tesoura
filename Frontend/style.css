@@ -1,96 +1,162 @@
-:root {
-  --bg-dark: #1E262C;          /* Fundo mais profundo */
-  --panel-gray: #4A5C6A;       /* Seu cinza atual */
-  --text-light: #CCD0CF;       /* Seu cinza gelo */
-  --accent-alert: #00D4FF;     /*  destaque */
-  --accent-alert2: #048eaa;
-}
+  :root {
+      --bg-dark: #1E262C;
+      --panel-gray: #4A5C6A;
+      --text-light: #CCD0CF;
+      --accent-alert: #00D4FF;
+      --accent-alert2: #048eaa;
+  }
 
-body{
-    background-color: var(--bg-dark) !important;
-}
+  body {
+      background-color: var(--bg-dark) !important;
+      transition: 0.5s;
+      margin: 0;
+      overflow-x: hidden;
+  }
 
-section{
-    display: flex;
-    height: 100vh;
-    align-items: center;
-}
-.painel{
-    /* background-color: brown; */
-    margin-left: 200px;
-    width: 500px;
-    height: 90%;
-}
+  section {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+  }
 
-.titulo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-alert);
-    height: 100px;
-}
+  .painel {
+      margin-left: 200px;
+      width: 500px;
+      height: 90%;
+      position: absolute;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-.opcoes{
-    gap: 5px;
-    /* background-color: salmon; */
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-}
-button{
-    height: 50px;
-    /* border: 1px solid black; */
-    border-radius: 15px !important;
-}
+  .painel.hidden-left {
+      transform: translateX(-150%);
+      opacity: 0;
+  }
 
-.textinho{
-    margin: 0;
-    text-align: left;
-}
-.btn-painel {
-  background: rgba(155, 168, 171, 0.2);
-  border: none;
-  border-radius: 20px;
-  padding: 10px 15px;
-  font-size: 22px;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden; /* Garante que nada saia das bordas arredondadas */
-}
+  .painel.hidden-right {
+      transform: translateX(150%);
+      opacity: 0;
+  }
 
-.btn-painel span {
-  /* 1. Gradiente com branco puro e maior largura de 'flash' */
-  background: linear-gradient(
-    to right, 
-    rgba(255, 255, 255, 0.6) 20%, 
-    rgba(255, 255, 255, 1) 50%, 
-    rgba(255, 255, 255, 0.6) 80%
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  
-  /* 2. Filtro de brilho externo (Glow) nas letras */
-  filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+  .painel.active {
+      transform: translateX(0);
+      opacity: 1;
+  }
 
-  transition: background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
-}
+  .titulo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      height: 100px;
+  }
 
-/* Efeito ao passar o mouse */
-.btn-painel:hover {
-  background: rgba(155, 168, 171, 0.3);
-  transform: scale(1.03);
-  box-shadow: 0 0 15px rgba(72, 188, 255, 0.2); /* Um leve brilho no botão todo usando sua cor de destaque */
-}
+  .versao {
+      font-size: 20px;
+      margin-bottom: 0;
+      color: var(--accent-alert2);
+  }
 
-.btn-painel:hover span {
-  background-position: -200% center;
-  /* 3. Ativa um brilho radiante nas letras durante o hover */
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
-}
+  .opcoes {
+      gap: 5px;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+  }
+
+  button {
+      height: 50px;
+      border-radius: 15px !important;
+  }
+
+  .textinho {
+      margin: 0;
+      text-align: left;
+  }
+
+  .btn-painel {
+      background: rgba(155, 168, 171, 0.2);
+      border: none;
+      border-radius: 20px;
+      padding: 10px 15px;
+      font-size: 22px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+  }
+
+  .btn-painel span {
+      background: linear-gradient(to right,
+              rgba(255, 255, 255, 0.6) 20%,
+              rgba(255, 255, 255, 1) 50%,
+              rgba(255, 255, 255, 0.6) 80%);
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+      transition: background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+  }
+
+  .btn-painel:hover {
+      background: rgba(155, 168, 171, 0.3);
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(72, 188, 255, 0.2);
+  }
+
+  .btn-painel:hover span {
+      background-position: -200% center;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+  }
+
+  .btn-voltar {
+      background: rgba(155, 168, 171, 0.15);
+      border: 1px solid var(--accent-alert2);
+      color: var(--text-light);
+      height: 40px;
+      font-size: 16px;
+      margin-bottom: 10px;
+  }
+
+  .btn-voltar:hover {
+      background: rgba(155, 168, 171, 0.25);
+      border-color: var(--accent-alert);
+  }
+
+  .game-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+  }
+
+  .choice-btn {
+      aspect-ratio: 1;
+      background: rgba(155, 168, 171, 0.2);
+      border: 2px solid transparent;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 50px;
+  }
+
+  .choice-btn:hover {
+      background: rgba(155, 168, 171, 0.3);
+      border-color: var(--accent-alert);
+      transform: scale(1.05);
+  }
+
+  .choice-label {
+      font-size: 16px;
+      margin-top: 10px;
+      color: var(--text-light);
+  }

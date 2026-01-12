@@ -34,6 +34,9 @@ section {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.t2{
+    color: var(--panel-gray);
+}
 
 #painel-jogo {
     width: 100%;
@@ -63,6 +66,14 @@ section {
 }
 #painel-jogo .btn-voltar{
     margin-left: 35px;
+}
+
+body.dark #resultado{
+    color: var(--bg-light); /* rosa */
+}
+
+body.dark #placar{
+    color: var(--text-light);
 }
 
 .painel.hidden-left {

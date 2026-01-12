@@ -5,40 +5,131 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PPT</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../Frontend/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body class="">
+<body>
     <main>
         <section>
-            <div class="painel">
+            <!-- Painel Menu Principal -->
+            <div class="painel active" id="painel-menu">
                 <div class="d-flex" style="margin-bottom: 0;">
-                    <h6 style="font-size: 20px; margin-bottom: 0; color: var(--accent-alert2);">Versão: 0.06</h6>
+                    <h6 class="versao">Versão: 0.08</h6>
                 </div>
                 <header class="titulo" style="margin-top: 0;">
                     <h1 style="margin-top: 0; font-size: 48px;">Pedra, papel e tesoura!</h1>
                 </header>
                 <div class="opcoes">
                     <h2 style="color: white;">Menu Principal</h2>
-                    <button class="btn-painel">
-                        <p class="textinho"> <span><strong>Jogar</strong></span></p>
+                    <button class="btn-painel" onclick="navegarPara('painel-jogo')">
+                        <p class="textinho"><span><strong>Jogar</strong></span></p>
                     </button>
 
-                    <button class="btn-painel">
-                        <p class="textinho"> <span><strong>Configurações</strong></span></p>
+                    <button class="btn-painel" onclick="navegarPara('painel-config')">
+                        <p class="textinho"><span><strong>Configurações</strong></span></p>
                     </button>
 
-                    <button class="btn-painel">
-                        <p class="textinho"> <span><strong>Créditos</strong></span></p>
+                    <button class="btn-painel" onclick="navegarPara('painel-creditos')">
+                        <p class="textinho"><span><strong>Créditos</strong></span></p>
                     </button>
+                </div>
+            </div>
 
+            <!-- Painel Jogo -->
+            <div class="painel hidden-right" id="painel-jogo">
+                <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
+                    <span><strong>← Voltar</strong></span>
+                </button>
+                <header class="titulo">
+                    <h1 style="margin-top: 0; font-size: 42px;">Escolha sua jogada!</h1>
+                </header>
+                <div class="opcoes">
+                    <div class="game-options">
+                        <div>
+                            <button class="choice-btn" onclick="jogar('pedra')">🪨</button>
+                            <div class="choice-label text-center">Pedra</div>
+                        </div>
+                        <div>
+                            <button class="choice-btn" onclick="jogar('papel')">📄</button>
+                            <div class="choice-label text-center">Papel</div>
+                        </div>
+                        <div>
+                            <button class="choice-btn" onclick="jogar('tesoura')">✂️</button>
+                            <div class="choice-label text-center">Tesoura</div>
+                        </div>
+                    </div>
+                    
+                    <div id="resultado" style="margin-top: 30px; text-align: center; color: var(--text-light); font-size: 20px;"></div>
+                    <div id="placar" style="margin-top: 20px; text-align: center; color: var(--accent-alert); font-size: 18px;">
+                        Você: 0 | Computador: 0
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel Configurações -->
+            <div class="painel hidden-right" id="painel-config">
+                <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
+                    <span><strong>← Voltar</strong></span>
+                </button>
+                <header class="titulo">
+                    <h1 style="margin-top: 0; font-size: 42px;">Configurações</h1>
+                </header>
+                <div class="opcoes">
+                    <h3 style="color: var(--text-light); text-align: center;">Em breve...</h3>
+                </div>
+            </div>
+
+            <!-- Painel Créditos -->
+            <div class="painel hidden-right" id="painel-creditos">
+                <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
+                    <span><strong>← Voltar</strong></span>
+                </button>
+                <header class="titulo">
+                    <h1 style="margin-top: 0; font-size: 42px;">Créditos</h1>
+                </header>
+                <div class="opcoes">
+                    <h3 style="color: var(--text-light); text-align: center;">Desenvolvido por: <br>Gabriel Lourencetti Souza</h3>
+                    <p style="color: var(--text-light); text-align: center;">Versão 0.08</p>
                 </div>
             </div>
         </section>
     </main>
+
+  <!--   <script>
+        function jogar(escolhaJogador) {
+            const opcoes = ['pedra', 'papel', 'tesoura'];
+            const escolhaComputador = opcoes[Math.floor(Math.random() * 3)];
+            
+            const emojis = {
+                'pedra': '🪨',
+                'papel': '📄',
+                'tesoura': '✂️'
+            };
+
+            let resultado = '';
+            
+            if (escolhaJogador === escolhaComputador) {
+                resultado = `Empate! Ambos escolheram ${emojis[escolhaJogador]}`;
+            } else if (
+                (escolhaJogador === 'pedra' && escolhaComputador === 'tesoura') ||
+                (escolhaJogador === 'papel' && escolhaComputador === 'pedra') ||
+                (escolhaJogador === 'tesoura' && escolhaComputador === 'papel')
+            ) {
+                resultado = `Você venceu! ${emojis[escolhaJogador]} vs ${emojis[escolhaComputador]}`;
+                placar.jogador++;
+            } else {
+                resultado = `Você perdeu! ${emojis[escolhaJogador]} vs ${emojis[escolhaComputador]}`;
+                placar.computador++;
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+            document.getElementById('placar').innerHTML = `Você: ${placar.jogador} | Computador: ${placar.computador}`;
+        }
+    </script> -->
     <script src="../Backend/index.js"></script>
+    <script src="../Backend/interatividade.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>

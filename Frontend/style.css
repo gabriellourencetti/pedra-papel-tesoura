@@ -45,7 +45,7 @@
   .titulo {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: left;
       color: var(--text-light);
       height: 100px;
   }
@@ -115,7 +115,6 @@
 
   .btn-voltar {
       background: rgba(155, 168, 171, 0.2);
-      width: 100px !important;
       border: none;
       border-radius: 20px;
       padding: 10px 15px;

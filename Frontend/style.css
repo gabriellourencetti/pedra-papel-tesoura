@@ -1,5 +1,13 @@
-main{
-  
+:root {
+  --bg-dark: #1E262C;          /* Fundo mais profundo */
+  --panel-gray: #4A5C6A;       /* Seu cinza atual */
+  --text-light: #CCD0CF;       /* Seu cinza gelo */
+  --accent-alert: #00D4FF;     /*  destaque */
+  --accent-alert2: #048eaa;
+}
+
+body{
+    background-color: var(--bg-dark) !important;
 }
 
 section{
@@ -8,7 +16,7 @@ section{
     align-items: center;
 }
 .painel{
-    background-color: brown;
+    /* background-color: brown; */
     margin-left: 200px;
     width: 500px;
     height: 90%;
@@ -18,24 +26,39 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: blanchedalmond;
+    color: var(--accent-alert);
     height: 100px;
 }
 
 .opcoes{
     gap: 5px;
-    background-color: salmon;
+    /* background-color: salmon; */
     height: 70%;
     display: flex;
     flex-direction: column;
 }
 button{
     height: 50px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 15px !important;
 }
 
 .textinho{
     margin: 0;
     text-align: left;
+}
+
+
+.btn-painel {
+ background: rgba(155, 168, 171, 0.2); /* cinza bruma translúcido */
+  color: rgba(255, 255, 255, 0.788);  /* cinza gelo */
+  border: none;
+  border-radius: 20px;
+  padding-left: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px); /* desfoque atrás do botão */
+  position: relative;
 }

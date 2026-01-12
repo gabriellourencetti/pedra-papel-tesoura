@@ -50,5 +50,10 @@ botoes.forEach((botao) => {
         somHover.currentTime = 0; // reinicia o som
         somHover.play();
     });
+
+    botao.addEventListener('click', ()=> {
+        somclique.currentTime = 0
+        somclique.play()
+    })
 });
 

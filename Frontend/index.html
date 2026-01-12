@@ -16,7 +16,7 @@
             <!-- Painel Menu Principal -->
             <div class="painel active" id="painel-menu">
                 <div class="d-flex" style="margin-bottom: 0;">
-                    <h6 class="versao">Versão: 0.21</h6>
+                    <h6 class="versao">Versão: 0.25</h6>
                 </div>
                 <header class="titulo" style="margin-top: 0;">
                     <h1 style="margin-top: 0; font-size: 48px;">Pedra, papel e tesoura!</h1>
@@ -102,11 +102,19 @@
                             </div>
                         </div>
                     </button>
-
-
-                    <button class="btn-painel" onclick="navegarPara('painel-menu')">
-                        <p class="textinho"><span><strong>Sons</strong></span></p>
+                    
+                    <button class="btn-painel">
+                        <p class="textinho" style="width: 50%;"><span><strong>Sons</strong></span></p>
+                        <div style="width: 50%; display: flex; justify-content: right;">
+                            <div class="trilho trilho-som" id="trilho2">
+                                <div class="indicador"></div>
+                            </div>
+                        </div>
                     </button>
+
+                  
+
+
                     <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
                         <span><strong>Voltar</strong></span>
                     </button>

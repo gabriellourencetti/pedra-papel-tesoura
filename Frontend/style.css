@@ -245,6 +245,57 @@ button {
     transition: all 0.3s ease;
 }
 
+/* ========== INTERRUPTOR BASE ========== */
+.trilho {
+    width: 60px;
+    height: 30px;
+    border-radius: 150px;
+    background-color: #e2e8f0;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.trilho .indicador {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-light);
+    transform: scale(.8);
+    position: absolute;
+    border-radius: 150px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+/* ========== MODO CLARO ========== */
+.trilho.dark,
+.trilho-som.ativo {
+    background-color: #cbd5e1;
+}
+
+.trilho.dark .indicador,
+.trilho-som.ativo .indicador {
+    left: 30px;
+    background-color: var(--primary-light);
+}
+
+.trilho.ativo .indicador{
+    background-color: var(--accent-alert);
+}
+
+/* ========== MODO ESCURO ========== */
+body.dark .trilho.dark,
+body.dark .trilho-som.ativo,
+body.dark .trilho-som {
+    background-color: var(--panel-gray);
+}
+
+body.dark .trilho.dark .indicador,
+body.dark .trilho-som.ativo .indicador {
+    background-color: var(--accent-alert);
+}
+
+
 .trilho.dark {
     background-color: #4A5C6A;
 }
@@ -253,6 +304,7 @@ button {
     left: 30px;
     background-color: var(--accent-alert);
 }
+
 
 /* ========== MODO ESCURO ========== */
 body.dark {

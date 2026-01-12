@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PPT</title>
-    <link rel="stylesheet" href="../Frontend/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Frontend/style.css">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
             </div>
 
             <!-- Painel Modo de jogo -->
-             <div class="painel hidden-right" id="painel-tipo-de-jogo">
+            <div class="painel hidden-right" id="painel-tipo-de-jogo">
                 <header class="titulo" style="margin-top: 0;">
                     <h1 style="margin-top: 0; font-size: 48px; text-align: left;"> Modo de jogo</h1>
                 </header>
@@ -47,8 +47,9 @@
                         <p class="textinho"><span><strong>Voltar</strong></span></p>
                     </button>
                 </div>
-                
+
             </div>
+
             <!-- Painel Jogo -->
             <div class="painel hidden-right" id="painel-jogo">
                 <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
@@ -72,9 +73,11 @@
                             <div class="choice-label text-center">Tesoura</div>
                         </div>
                     </div>
-                    
-                    <div id="resultado" style="margin-top: 30px; text-align: center; color: var(--text-light); font-size: 20px;"></div>
-                    <div id="placar" style="margin-top: 20px; text-align: center; color: var(--accent-alert); font-size: 18px;">
+
+                    <div id="resultado"
+                        style="margin-top: 30px; text-align: center; color: var(--text-light); font-size: 20px;"></div>
+                    <div id="placar"
+                        style="margin-top: 20px; text-align: center; color: var(--accent-alert); font-size: 18px;">
                         Você: 0 | Computador: 0
                     </div>
                 </div>
@@ -83,57 +86,33 @@
             <!-- Painel Configurações -->
             <div class="painel hidden-right" id="painel-config">
                 <div class="opcoes">
-                 <header class="titulo" style="margin-top: 0;">
-                    <h1 style="margin-top: 0; font-size: 48px; text-align: left;"> Configurações</h1>
-                </header>
-                <button class="btn-painel" onclick="navegarPara('#')">
+                    <header class="titulo" style="margin-top: 0;">
+                        <h1 style="margin-top: 0; font-size: 48px; text-align: left;"> Configurações</h1>
+                    </header>
+
+                    <!-- onclick="navegarPara('painel-menu')" -->
+                    <button class="btn-painel">
                         <p class="textinho"><span><strong>Modo escuro</strong></span></p>
+                        <div class="trilho" id="trilho">
+                            <div class="indicador"></div>
+                        </div>
                     </button>
-                <button class="btn-painel" onclick="navegarPara('#')">
+
+
+                    <button class="btn-painel" onclick="navegarPara('painel-menu')">
                         <p class="textinho"><span><strong>Sons</strong></span></p>
                     </button>
-                <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
-                    <span><strong>Voltar</strong></span>
-                </button>
+                    <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
+                        <span><strong>Voltar</strong></span>
+                    </button>
                 </div>
-                
+
             </div>
 
-            
         </section>
     </main>
 
-  <!--   <script>
-        function jogar(escolhaJogador) {
-            const opcoes = ['pedra', 'papel', 'tesoura'];
-            const escolhaComputador = opcoes[Math.floor(Math.random() * 3)];
-            
-            const emojis = {
-                'pedra': '🪨',
-                'papel': '📄',
-                'tesoura': '✂️'
-            };
-
-            let resultado = '';
-            
-            if (escolhaJogador === escolhaComputador) {
-                resultado = `Empate! Ambos escolheram ${emojis[escolhaJogador]}`;
-            } else if (
-                (escolhaJogador === 'pedra' && escolhaComputador === 'tesoura') ||
-                (escolhaJogador === 'papel' && escolhaComputador === 'pedra') ||
-                (escolhaJogador === 'tesoura' && escolhaComputador === 'papel')
-            ) {
-                resultado = `Você venceu! ${emojis[escolhaJogador]} vs ${emojis[escolhaComputador]}`;
-                placar.jogador++;
-            } else {
-                resultado = `Você perdeu! ${emojis[escolhaJogador]} vs ${emojis[escolhaComputador]}`;
-                placar.computador++;
-            }
-
-            document.getElementById('resultado').innerHTML = resultado;
-            document.getElementById('placar').innerHTML = `Você: ${placar.jogador} | Computador: ${placar.computador}`;
-        }
-    </script> -->
+    <!-- Scripts -->
     <script src="../Backend/index.js"></script>
     <script src="../Backend/interatividade.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

@@ -47,18 +47,50 @@ button{
     margin: 0;
     text-align: left;
 }
-
-
 .btn-painel {
- background: rgba(155, 168, 171, 0.2); /* cinza bruma translúcido */
-  color: rgba(255, 255, 255, 0.788);  /* cinza gelo */
+  background: rgba(155, 168, 171, 0.2);
   border: none;
   border-radius: 20px;
-  padding-left: 15px;
+  padding: 10px 15px;
   font-size: 22px;
   cursor: pointer;
   text-align: left;
   transition: all 0.3s ease;
-  backdrop-filter: blur(5px); /* desfoque atrás do botão */
+  backdrop-filter: blur(5px);
   position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Garante que nada saia das bordas arredondadas */
+}
+
+.btn-painel span {
+  /* 1. Gradiente com branco puro e maior largura de 'flash' */
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0.6) 20%, 
+    rgba(255, 255, 255, 1) 50%, 
+    rgba(255, 255, 255, 0.6) 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* 2. Filtro de brilho externo (Glow) nas letras */
+  filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+
+  transition: background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.btn-painel:hover {
+  background: rgba(155, 168, 171, 0.3);
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(72, 188, 255, 0.2); /* Um leve brilho no botão todo usando sua cor de destaque */
+}
+
+.btn-painel:hover span {
+  background-position: -200% center;
+  /* 3. Ativa um brilho radiante nas letras durante o hover */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
 }

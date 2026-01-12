@@ -4,7 +4,7 @@
     --text-light: #CCD0CF;
     --accent-alert: #00D4FF;
     --accent-alert2: #048eaa;
-    
+
     /* Cores Modo Claro - Minimalista */
     --primary-light: #64748b;
     --primary-light-hover: #475569;
@@ -34,45 +34,46 @@ section {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.t2{
+.t2 {
     color: var(--panel-gray);
 }
 
 #painel-jogo {
     width: 100%;
-    margin:0;
+    margin: 0;
     /* background-color: rgb(27, 172, 51); */
 }
 
 #painel-jogo .separador {
     width: 100%;
-   height: 400px;
+    height: 600px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items:flex-end;
+    align-items: center;
     /* background-color: rgb(49, 27, 172); */
 }
 
-#painel-jogo .opcoes{
-    width: 300px;
-    height: 200px;
+#painel-jogo .opcoes {
+    height: 150px;
     /* background-color: yellow; */
-    align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
-#painel-jogo .titulo{
+#painel-jogo .titulo {
     padding-left: 55px;
 }
-#painel-jogo .btn-voltar{
+
+#painel-jogo .btn-voltar {
     margin-left: 35px;
 }
 
-body.dark #resultado{
-    color: var(--bg-light); /* rosa */
+body.dark #resultado {
+    color: var(--bg-light);
+    /* rosa */
 }
 
-body.dark #placar{
+body.dark #placar {
     color: var(--text-light);
 }
 
@@ -113,8 +114,9 @@ body.dark #placar{
     display: flex;
     flex-direction: column;
 }
-h2{
-color: var(--primary-light-hover)
+
+h2 {
+    color: var(--primary-light-hover)
 }
 
 button {
@@ -334,12 +336,13 @@ body.dark .choice-label {
 /* impede que painéis escondidos capturem cliques, mantendo animação */
 .painel.hidden-left,
 .painel.hidden-right {
-  pointer-events: none; /* não recebem cliques */
-  z-index: 0;
+    pointer-events: none;
+    /* não recebem cliques */
+    z-index: 0;
 }
 
 /* painel ativo recebe cliques e fica acima */
 .painel.active {
-  pointer-events: auto;
-  z-index: 2;
+    pointer-events: auto;
+    z-index: 2;
 }

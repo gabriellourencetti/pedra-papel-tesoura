@@ -38,3 +38,17 @@ trilho.addEventListener('click', ()=> {
     trilho.classList.toggle('dark')
      body.classList.toggle('dark')
 })
+
+// Sons
+
+const somclique = new Audio('somdeclique.wav')
+const somHover = new Audio('somhover.wav')
+const botoes = document.querySelectorAll('.btn-painel')
+
+botoes.forEach((botao) => {
+    botao.addEventListener('mouseenter', () => {
+        somHover.currentTime = 0; // reinicia o som
+        somHover.play();
+    });
+});
+

@@ -114,12 +114,20 @@
   }
 
   .btn-voltar {
-      background: rgba(155, 168, 171, 0.15);
-      border: 1px solid var(--accent-alert2);
-      color: var(--text-light);
-      height: 40px;
-      font-size: 16px;
-      margin-bottom: 10px;
+      background: rgba(155, 168, 171, 0.2);
+      width: 100px !important;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 15px;
+      font-size: 22px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
   }
 
   .btn-voltar:hover {

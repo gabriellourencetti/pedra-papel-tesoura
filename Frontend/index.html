@@ -16,14 +16,14 @@
             <!-- Painel Menu Principal -->
             <div class="painel active" id="painel-menu">
                 <div class="d-flex" style="margin-bottom: 0;">
-                    <h6 class="versao">Versão: 0.08</h6>
+                    <h6 class="versao">Versão: 0.10</h6>
                 </div>
                 <header class="titulo" style="margin-top: 0;">
                     <h1 style="margin-top: 0; font-size: 48px;">Pedra, papel e tesoura!</h1>
                 </header>
                 <div class="opcoes">
                     <h2 style="color: white;">Menu Principal</h2>
-                    <button class="btn-painel" onclick="navegarPara('painel-jogo')">
+                    <button class="btn-painel" onclick="navegarPara('painel-tipo-de-jogo')">
                         <p class="textinho"><span><strong>Jogar</strong></span></p>
                     </button>
 
@@ -37,10 +37,25 @@
                 </div>
             </div>
 
+            <!-- Painel Modo de jogo -->
+             <div class="painel hidden-right" id="painel-tipo-de-jogo">
+                <header class="titulo" style="margin-top: 0;">
+                    <h1 style="margin-top: 0; font-size: 48px;">Pedra, papel e tesoura!</h1>
+                </header>
+                <div class="opcoes">
+                    <button class="btn-painel" onclick="navegarPara('painel-jogo')">
+                        <p class="textinho"><span><strong>Modo Clássico</strong></span></p>
+                    </button>
+                    <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
+                        <p class="textinho"><span><strong>Voltar</strong></span></p>
+                    </button>
+                </div>
+                
+            </div>
             <!-- Painel Jogo -->
             <div class="painel hidden-right" id="painel-jogo">
                 <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
-                    <span><strong>← Voltar</strong></span>
+                    <span><strong>Voltar</strong></span>
                 </button>
                 <header class="titulo">
                     <h1 style="margin-top: 0; font-size: 42px;">Escolha sua jogada!</h1>
@@ -71,7 +86,7 @@
             <!-- Painel Configurações -->
             <div class="painel hidden-right" id="painel-config">
                 <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
-                    <span><strong>← Voltar</strong></span>
+                    <span><strong>Voltar</strong></span>
                 </button>
                 <header class="titulo">
                     <h1 style="margin-top: 0; font-size: 42px;">Configurações</h1>
@@ -84,7 +99,7 @@
             <!-- Painel Créditos -->
             <div class="painel hidden-right" id="painel-creditos">
                 <button class="btn-painel btn-voltar" onclick="navegarPara('painel-menu')">
-                    <span><strong>← Voltar</strong></span>
+                    <span><strong>Voltar</strong></span>
                 </button>
                 <header class="titulo">
                     <h1 style="margin-top: 0; font-size: 42px;">Créditos</h1>

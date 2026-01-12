@@ -24,30 +24,28 @@ function computador() {
         return 'tesoura'
     }
 }
-function comparar(usuario, computador){
+function comparar(usuario, computador) {
     if (usuario === computador) {
         console.log('Empate na tela! Ambos escolheram a mesma opção.');
         return 'Empate';
-    } else if (usuario === 'pedra' && computador === 'tesoura') {
-        console.log('Jogador ganhou');
-        return 'Jogador';
-    } else if (usuario === 'tesoura' && computador === 'papel') {
-        console.log('Jogador wins #ez');
-        return 'Jogador';
-    } else if (usuario === 'papel' && computador === 'pedra') {
-        console.log('Jogador ganhou');
-        return 'Jogador';
-    } else {
-        console.log('Máquina wins');
-        return 'Máquina';
-    }
+    } else if (
+        (usuario === 'pedra' && computador === 'tesoura') ||
+        (usuario === 'tesoura' && computador === 'papel') ||
+        (usuario === 'papel' && computador === 'pedra')
+    ) return "Jogador ganhou!"
+    else return "Maquina Ganhou!"
+}
+//função principal do jogo
+function jogar() {
+  const escolhaUser = usuario(prompt('Escolha pedra, papel ou tesoura!')) // se n coloca esse usuario, ele aceita qlqr coisa
+    if(!escolhaUser) return
+
+    const escolhaCpu = computador()
+    const resultado = comparar(escolhaUser, escolhaCpu)
+
+    console.log('Sua escolha: ', escolhaUser)
+    console.log('Escolha da Maquina: ', escolhaCpu)
+    console.log('Resultado da partida: ', resultado)
+
 }
 
-
-function jogar(){
-    const opcaoUser = prompt('Escolha pedra, papel ou tesoura');
-    const opcaoCpu = computador();
-    const resultado = comparar(opcaoUser, opcaoCpu);
-    // console.log('Resultado final:', resultado)
-}
- 
